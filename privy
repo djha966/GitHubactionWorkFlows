@@ -1,0 +1,29 @@
+name: Build
+
+on:
+
+	push:
+		branches:
+			- main
+
+jobs:
+	build:
+	-     name: Build 
+		runs-on: ubuntu-latest 
+		steps:
+              
+			- name: Checkout code
+			    uses: actions/checkout@v2 
+			    with:
+				etch-depth: 0 
+
+			- uses: sonarsource/sonarqube-scan-actionamaster
+   			   Env:
+				SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+				SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+                       ﻿﻿  - name: npm install dependency 
+			  run: npm install
+			-  name: Trivy file scan 
+			    run: trivy fs. › trivyfs.txt
+- ﻿﻿name: Docker Build and push run: 1 docker build -t tic-tac-toe
+- docker tag tic-tac-toe sevenajay/tic-tac-toe:latest docker login -u ${i] secrets .DOCKERHUB_USERNAME }} -P ${{ secrets .DOCKERHUB_TOKEN }} docker push sevenajay/tic-tac-toe:latest env: DOCKER_CLI_ACI:
